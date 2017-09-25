@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
+import CardContainer from './components/CardContainer'
+import { Grid } from 'semantic-ui-react'
+
 
 class App extends Component {
+
+  sample = [{title:"potato", details: "blah blah blah"},
+    {title:"tomato", details: "red and juicy"},
+    {title:"taco", details: "burrito burrito"}]
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <CardContainer info={this.sample} />
       </div>
     );
   }
