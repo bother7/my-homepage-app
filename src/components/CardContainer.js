@@ -2,8 +2,8 @@ import React from 'react';
 import Card from './Card';
 
 const CardContainer = (props) => {
-  return (<div className="ui cards">
-  {props.info.map((blurb) => {return <Card title={blurb.title} details={blurb.details}/>})}
+  return (<div className="wrapper" onDragOver={props.drag}>
+  {props.info.map((blurb, index) => {return <Card title={blurb.title} index={index+1} details={blurb.details}/>})}
   </div>)
 }
 

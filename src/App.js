@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
 import CardContainer from './components/CardContainer'
-import { Grid } from 'semantic-ui-react'
 
 
 class App extends Component {
+
+  drag = (event) => {
+    event.preventDefault()
+  }
 
   sample = [{title:"potato", details: "blah blah blah"},
     {title:"tomato", details: "red and juicy"},
@@ -14,9 +17,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
         <CardContainer info={this.sample} />
-      </div>
     );
   }
 }
