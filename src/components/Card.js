@@ -15,8 +15,12 @@ class Card extends Component {
     this.setState({endX: event.pageX, endY: event.pageY})
   }
   dragStart = (event) => {
-    console.log("this works")
-    this.setState({startX: event.pageX, startY: event.pageY})
+    console.log("this works", event.target.offsetLeft, event.target.offsetTop)
+    if (this.state.startX === null) {
+        this.setState({startX: event.target.offsetLeft, startY: event.target.offsetTop})
+    } else {
+      this.setState({startX: event.pageX, startY: event.pageY})
+    }
   }
 
 
