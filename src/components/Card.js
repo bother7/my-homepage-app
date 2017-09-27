@@ -5,7 +5,6 @@ class Card extends Component {
     endX: null,
     endY: null,
     index: this.props.index,
-    column: null,
     targetbox: null
   }
 
@@ -14,6 +13,15 @@ class Card extends Component {
     originY: null,
     startX: null,
     startY: null
+  }
+
+  cssGrid = {
+    1: "one",
+    2: "two",
+    3: "three",
+    4: "four",
+    5: "five",
+    6: "six"
   }
 
   dragEnd = (event) => {
@@ -46,26 +54,17 @@ class Card extends Component {
     console.log("hovering")
   }
 
-  componentDidMount() {
-    if (this.state.index === 1) {
-      this.setState({column: "one"})
-    } else if (this.state.index === 2) {
-        this.setState({column: "two"})
-    } else if (this.state.index === 3){
-        this.setState({column: "three"})
-    }
-  }
 
   render(){
     if (this.state.targetbox === null) {
-      return (<div className={this.state.column} id={this.props.title} draggable="true" onDrop={this.drop} onDragStart={this.dragStart} onDragOver={(event) => event.preventDefault()} onDragEnd={this.dragEnd} ><h3>{this.props.title}</h3><p>{this.props.details}</p></div>)
+      return (<div className={this.cssGrid[this.state.index]} id={this.props.title} draggable="true" onDrop={this.drop} onDragStart={this.dragStart} onDragOver={(event) => event.preventDefault()} onDragEnd={this.dragEnd} ><h3>{this.props.title}</h3><p>{this.props.details}</p></div>)
     }
     else {
       console.log(this.state.targetbox)
       const style = {backgroundColor: 'red'}
       // const style = {top: (this.state.endY-this.setup.startY+this.setup.originY)+'px', left: (this.state.endX-this.setup.startX+this.setup.originX)+'px'}
       // return (<div style={style} draggable="true" id={this.props.title} className="card" onDrop={this.drop} onDragStart={this.dragStart} onDragOver={(event) => event.preventDefault()} onDragEnd={this.dragEnd}><h3>{this.props.title}</h3><p>{this.props.details}</p></div>)
-      return (<div style={style} className={this.state.column} id={this.props.title} draggable="true" onDrop={this.drop} onDragStart={this.dragStart} onDragOver={(event) => event.preventDefault()} onDragEnd={this.dragEnd} ></div>)
+      return (<div style={style} className={this.cssGrid[this.state.index]} id={this.props.title} draggable="true" onDrop={this.drop} onDragStart={this.dragStart} onDragOver={(event) => event.preventDefault()} onDragEnd={this.dragEnd} ></div>)
     }
   }
 

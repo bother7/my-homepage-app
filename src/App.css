@@ -14,31 +14,7 @@
   grid-auto-rows: minmax(100px, auto);
 }
 
-.one {
-  grid-column: 1 / 3;
-  grid-row: 1;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  float:left;
-  width: 200px;
-  height: 300px;
-  margin: 10px;
-  background-color: #f0f8ff;
-}
-.two {
-  grid-column: 2 / 3;
-  grid-row: 1;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  float:left;
-  width: 200px;
-  height: 300px;
-  margin: 10px;
-  background-color: #f0f8ff;
-}
-.three {
-  grid-column: 3 / 3;
-  grid-row: 1;
+.one, .two, .three, .four, .five, .six {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   float:left;

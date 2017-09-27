@@ -11,9 +11,13 @@ class App extends Component {
     this.swap = this.swap.bind(this)
   }
   state = {
-    info: [{title:"potato", details: "blah blah blah"},
-      {title:"tomato", details: "red and juicy"},
-      {title:"taco", details: "burrito burrito"}],
+    info: [{title:"1. potato", details: "blah blah blah"},
+      {title:"2. tomato", details: "red and juicy"},
+      {title:"3. taco", details: "burrito burrito"},
+      {title:"4. oregano", details: "spicy"},
+      {title:"5. oranges", details: "are orange"},
+      {title:"6. Trash", details: "Trashy"}
+    ],
 
   }
 
@@ -30,10 +34,6 @@ class App extends Component {
     samplearray[pos2] = temp
     this.setState({info: samplearray})
   }
-
-  // sample = [{title:"potato", details: "blah blah blah"},
-  //   {title:"tomato", details: "red and juicy"},
-  //   {title:"taco", details: "burrito burrito"}]
 
   render() {
     return (
