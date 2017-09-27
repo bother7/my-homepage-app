@@ -16,7 +16,7 @@ class App extends Component {
       {title:"3. taco", details: "burrito burrito"},
       {title:"4. oregano", details: "spicy"},
       {title:"5. oranges", details: "are orange"},
-      {title:"6. Trash", details: "Trashy"}
+      {title:"6. raccoon", details: "trash panda"}
     ],
 
   }
