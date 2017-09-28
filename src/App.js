@@ -36,8 +36,8 @@ class App extends Component {
   }
 
   render() {
-    return (
-        <CardContainer swap={this.swap} info={this.state.info} />
+    return ( <div><h1>Drag and Drop Containers Over Each Other to Swap Places</h1>
+        <CardContainer swap={this.swap} info={this.state.info} /> </div>
     );
   }
 }
